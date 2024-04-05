@@ -29,27 +29,15 @@
   </div>
   <div class="slide-2 ">
 
+
     <div class="columna-1">
         <h2>Héctor Yoav Ugarte Ramírez  </h2>
         <h3>FullStack Developer Engineer</h3>
         <h4>I develop several applications, focusing in AI applications.</h4>
     </div>
     <div class="columna-2">
-      <div class="contenedor-experiencia">
-        <div class="columna-1">
-
-        </div>
-        <div class="columna-2">
-          <div class="cargo">
-
-          </div>
-          <div class="resumen">
-
-          </div>
-          <div class="tecnologias">
-
-          </div>
-        </div>
+      <div *ngFor="let experiencia of experiencias" (mouseenter)="hoverElemento(experiencia)" (mouseleave)="resetOpacity()">
+        <app-experiencia [experiencia]="experiencia"></app-experiencia>
       </div>
     </div>
   </div>

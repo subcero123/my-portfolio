@@ -1,0 +1,12 @@
+<div class="contenedor-experiencia" [style.opacity]="experiencia.opacity">
+    <div class="columna-1">
+        {{experiencia.fecha}}    </div>
+    <div class="columna-2">
+      <div class="cargo">{{ experiencia.cargo }}</div>
+      <div class="resumen">{{ experiencia.resumen }}</div>
+      <div class="tecnologias">
+          <b *ngFor="let tecnologia of experiencia.tecnologias">{{ tecnologia }}</b>
+      </div>
+    </div>
+</div>
+  
