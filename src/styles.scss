@@ -4,5 +4,9 @@
 body{
     margin: 0px;
     font-family: "Bebas Neue", sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento de WebKit (Safari y Chrome) */
 }
