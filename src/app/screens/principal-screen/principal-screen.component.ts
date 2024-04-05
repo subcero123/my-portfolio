@@ -26,20 +26,26 @@ export class PrincipalScreenComponent {
 
   experiencias = [
     {
-      fecha: '2024-2025',
-      cargo: 'Front end developer',
-      resumen: 'FUI ASDASDASD',
-      tecnologias: ['React', 'Angular'],
+      fecha: '2024-Present',
+      cargo: 'Add Astra - Fullstack Engineer',
+      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      tecnologias: ['PHP', 'Wordpress', 'Gulp', 'DialogFlow', 'Twilio', 'AI', 'GPT', 'Sales'],
       opacity: 1
     },
     {
-      fecha: '2022-2023',
-      cargo: 'Back end developer',
-      resumen: 'FUI QWEQWEQWE',
-      tecnologias: ['Node.js', 'Express'],
+      fecha: 'Jan 2023 - Dec 2023',
+      cargo: 'CIIEC - Researcher',
+      resumen: 'Worked on the developed a Python tool to graphically analyze EEG records, providing an intuitive visualization of the most active brain regions. Leveraged libraries like Matplotlib and NumPy for efficient data visualization and manipulation.Implemented machine learning methods, including K-means, to cluster and identify behavior patterns in EEG readings. This automation enhanced the analysis process, improving efficiency and precision in interpreting EEG data.',
+      tecnologias: ['Python', 'Matplotlib', 'NumPy', 'Machine Learning'],
       opacity: 1
     },
-    // Agrega más objetos de experiencia laboral según sea necesario
+    {
+      fecha: 'Jan 2023 - Jul 2023',
+      cargo: 'Mirai Innovation - Software Engineer - Osaka, Japan',
+      resumen: '• Implemented a platform using RTSP protocol, Python, and React for real-time visualization and remote control of a vehicle. This integration allowed users to monitor and operate the vehicle seamlessly. Developed an AI capable of predicting and following roads, enhancing the ease of vehicle operation. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
+      tecnologias: ['Python', 'React', 'AI', 'Computer Vision', 'Django', 'Flask', 'Arduino'],
+      opacity: 1
+    },
   ];
 
   constructor(private renderer: Renderer2) {
