@@ -24,6 +24,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export class PrincipalScreenComponent {
   showSlide1Content: boolean = true;
   experienciaHover: any = null;
+  proyectoHover: any = null;
   lightStyle: any = {};
   progressBarWidth: number = 0;
   // Crear timeline gsap
@@ -49,6 +50,33 @@ export class PrincipalScreenComponent {
       cargo: 'Mirai Innovation - Software Engineer - Osaka, Japan',
       resumen: 'Implemented a platform using RTSP protocol, Python, and React for real-time visualization and remote control of a vehicle. This integration allowed users to monitor and operate the vehicle seamlessly. Developed an AI capable of predicting and following roads, enhancing the ease of vehicle operation. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
       tecnologias: ['Python', 'React', 'AI', 'Computer Vision', 'Django', 'Flask', 'Arduino'],
+      opacity: 1
+    },
+  ];
+
+  proyectos = [
+    {
+      titulo: 'Add Astra - Fullstack Engineer',
+      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      opacity: 1
+    },
+    {
+      titulo: 'Add Astra - Fullstack Engineer',
+      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      opacity: 1
+    },
+    {
+      titulo: 'Add Astra - Fullstack Engineer',
+      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      opacity: 1
+    },
+    {
+      titulo: 'Add Astra - Fullstack Engineer',
+      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
       opacity: 1
     },
   ];
@@ -86,6 +114,10 @@ export class PrincipalScreenComponent {
     this.experiencias.forEach((experiencia) => {
         experiencia.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
     });
+    this.proyectoHover = null;
+    this.proyectos.forEach((proyecto) => {
+        proyecto.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
+    });
   }
 
   // Función para establecer la opacidad de cada elemento
@@ -97,6 +129,20 @@ export class PrincipalScreenComponent {
         experiencia.opacity = 0.5; // Establece la opacidad a 0.5 si el elemento no está en hover
       }
     });
+    this.proyectos.forEach((proyecto) => {
+      if (proyecto === this.proyectoHover) {
+        proyecto.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
+      } else {
+        proyecto.opacity = 0.5; // Establece la opacidad a 0.5 si el elemento no está en hover
+      }
+    
+    })
+  }
+
+
+  hoverProyecto(proyecto: any) {
+    this.proyectoHover = proyecto;
+    this.setOpacity();
   }
 
   animacionEntrada(){

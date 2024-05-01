@@ -49,8 +49,8 @@
       <div class="resume-link">
         <a href="">View my Full Resume <b>➚</b></a>
       </div>
-      <div *ngFor="let experiencia of experiencias" (mouseenter)="hoverElemento(experiencia)" (mouseleave)="resetOpacity()">
-        <app-projects [proyectos]="experiencia"></app-projects>
+      <div *ngFor="let proyecto of proyectos" (mouseenter)="hoverProyecto(proyecto)" (mouseleave)="resetOpacity()">
+        <app-projects [proyectos]="proyecto"></app-projects>
       </div>
     </div>
   </div>
