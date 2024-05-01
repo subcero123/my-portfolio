@@ -1,5 +1,8 @@
 import { Component, HostListener, Renderer2 } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 @Component({
   selector: 'app-principal-screen',
@@ -23,6 +26,8 @@ export class PrincipalScreenComponent {
   experienciaHover: any = null;
   lightStyle: any = {};
   progressBarWidth: number = 0;
+  // Crear timeline gsap
+  timeline = gsap.timeline();
 
   experiencias = [
     {
@@ -42,7 +47,7 @@ export class PrincipalScreenComponent {
     {
       fecha: 'Jan 2023 - Jul 2023',
       cargo: 'Mirai Innovation - Software Engineer - Osaka, Japan',
-      resumen: '• Implemented a platform using RTSP protocol, Python, and React for real-time visualization and remote control of a vehicle. This integration allowed users to monitor and operate the vehicle seamlessly. Developed an AI capable of predicting and following roads, enhancing the ease of vehicle operation. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
+      resumen: 'Implemented a platform using RTSP protocol, Python, and React for real-time visualization and remote control of a vehicle. This integration allowed users to monitor and operate the vehicle seamlessly. Developed an AI capable of predicting and following roads, enhancing the ease of vehicle operation. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
       tecnologias: ['Python', 'React', 'AI', 'Computer Vision', 'Django', 'Flask', 'Arduino'],
       opacity: 1
     },
@@ -50,20 +55,15 @@ export class PrincipalScreenComponent {
 
   constructor(private renderer: Renderer2) {
     window.addEventListener('scroll', this.onWindowScroll.bind(this));
+    gsap.registerPlugin(ScrollTrigger);
   }
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    const offsetX = event.clientX;
-    const offsetY = event.clientY;
-    const brightness = 0.1; // Valor de brillo (ajustable según necesidades)
-
-    this.lightStyle = {
-      top: offsetY - 100 + 'px',
-      left: offsetX - 100 + 'px',
-      background: `radial-gradient(circle, rgba(255, 255, 255, ${brightness}), transparent)`,
-    };
+  // ngoninit
+  ngOnInit() {
+    this.animacionEntrada();
   }
+
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -97,5 +97,20 @@ export class PrincipalScreenComponent {
         experiencia.opacity = 0.5; // Establece la opacidad a 0.5 si el elemento no está en hover
       }
     });
+  }
+
+  animacionEntrada(){
+    //Obtener los elementos hijo de name
+    const letras = document.querySelectorAll('.name-japanese > *');
+    const letrasRomaji = document.querySelectorAll('.name-romaji > *');
+
+
+
+    // Loop para esta animacion
+    
+    this.timeline
+    .from(letras, { display: "none", stagger: 0.15, duration: .9})
+    .from(Array.from(letras).reverse(), { display: "none", stagger: 0.15, duration: .9})
+    .from(letrasRomaji, { display: "none", stagger: 0.1, duration: 0.3}, "-=.5")
   }
 }

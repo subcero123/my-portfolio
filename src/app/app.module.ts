@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PrincipalScreenComponent } from './screens/principal-screen/principal-screen.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+
 
 @NgModule({
   declarations: [
@@ -13,10 +15,11 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
     PrincipalScreenComponent,
     HeaderComponent,
     ExperienciaComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,17 @@
 <!-- <app-header></app-header> -->
 <div class="contenedor-principal">
   <app-header></app-header>
-  <div class="glow-cursor" [ngStyle]="lightStyle"></div>
   <div class="slide-1">
     <div class="contenedor-titulos text-focus-in ">
       <div class="titulo text-focus-in">
         Konnichiwa, I'm 
-        <div class="name text-focus-in">
+        <div class="name name-japanese text-focus-in">
+            <p>ヘ</p>
+            <p>ク</p>
+            <p>ト</p>
+            <p>ル</p>
+        </div>
+        <div class="name name-romaji text-focus-in">
             <p>H</p>
             <p>É</p>
             <p>C</p>
@@ -33,12 +38,19 @@
     <div class="columna-1">
         <h2>Héctor Yoav Ugarte Ramírez  </h2>
         <h3>FullStack Developer Engineer</h3>
-        <h4>Prolific Software Engineer adept in web, mobile, and AI research, with a passion for languages, especially Japanese.</h4>
+        <h4>Prolific Software Engineer adept in web, and AI research</h4>
+        <h4>with a passion for languages, especially Japanese.</h4>
         
     </div>
     <div class="columna-2">
       <div *ngFor="let experiencia of experiencias" (mouseenter)="hoverElemento(experiencia)" (mouseleave)="resetOpacity()">
         <app-experiencia [experiencia]="experiencia"></app-experiencia>
+      </div>
+      <div class="resume-link">
+        <a href="">View my Full Resume <b>➚</b></a>
+      </div>
+      <div *ngFor="let experiencia of experiencias" (mouseenter)="hoverElemento(experiencia)" (mouseleave)="resetOpacity()">
+        <app-projects [proyectos]="experiencia"></app-projects>
       </div>
     </div>
   </div>
