@@ -58,25 +58,28 @@ export class PrincipalScreenComponent {
     {
       titulo: 'Add Astra - Fullstack Engineer',
       resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
+      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
       opacity: 1
     },
     {
       titulo: 'Add Astra - Fullstack Engineer',
       resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
+      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
       opacity: 1
     },
     {
       titulo: 'Add Astra - Fullstack Engineer',
       resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
+      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
       opacity: 1
     },
     {
       titulo: 'Add Astra - Fullstack Engineer',
       resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      src: 'https://raw.githubusercontent.com/subcero123/Ecomerce/main/assets/images/glacial_background.jpg',
       opacity: 1
     },
   ];
@@ -102,6 +105,12 @@ export class PrincipalScreenComponent {
     this.progressBarWidth = (scrollPosition / totalHeight) * 100;
   }
 
+  hoverElementoProyecto(proyecto: any) {
+    this.hoverProyecto(proyecto);
+    // Cambiaremos el src de la imagen a la versión gif
+    proyecto.src = proyecto.src.replace('.jpg', '.gif');
+  }
+
   // Función para ajustar la opacidad cuando se entra en un elemento
   hoverElemento(experiencia: any) {
     this.experienciaHover = experiencia;
@@ -117,6 +126,8 @@ export class PrincipalScreenComponent {
     this.proyectoHover = null;
     this.proyectos.forEach((proyecto) => {
         proyecto.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
+        // Cambiaremos el src de la imagen a la versión jpg
+        proyecto.src = proyecto.src.replace('.gif', '.jpg');
     });
   }
 
