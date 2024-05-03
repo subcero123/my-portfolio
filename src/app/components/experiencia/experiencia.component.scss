@@ -1,48 +1,74 @@
-.contenedor-experiencia{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100%;
+// Importat styles from styles.scss
+@import "../../../styles.scss";
+.contenedor-experiencia {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  transition: opacity 0.2s ease; /* Define una transición suave para la propiedad de opacidad */
+
+  // Version tablet y mobile
+  @include tablet {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // Version tablet y mobile
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:hover {
+    opacity: 1 !important;
+    .cargo {
+      color: #d72323;
+    }
+  }
+
+  .columna-1 {
+    width: 30%;
+    color: #787878;
+
+    // Version tablet y mobile
+    @include tablet {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    // Version tablet y mobile
+    @include mobile {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  .columna-2 {
+    width: 70%;
     display: flex;
-    justify-content: start;
-    flex-direction: row;
-    transition: opacity 0.2s ease; /* Define una transición suave para la propiedad de opacidad */
+    flex-direction: column;
 
-
-    &:hover{
-        opacity: 1 !important;
-        .cargo{
-            color: #d72323;
-        }
+    .cargo {
+      font-weight: bold;
     }
-
-    .columna-1{
-        width: 30%;
-        color: #787878
-
-
+    .resumen {
+      margin-top: 20px;
+      color: #94a3bb;
     }
+    .tecnologias {
+      font-size: 0.9rem;
+      display: flex;
+      margin: 8px;
+      color: #d72323;
 
-    .columna-2{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-
-        .cargo{
-            font-weight: bold;
-        }
-        .resumen{
-            margin-top: 20px;
-            color: #94A3BB;
-        }
-        .tecnologias{
-            font-size: 0.9rem;
-            display: flex;
-            margin: 8px;
-            color: #d72323;
-
-            b{
-                margin-right: 15px;
-            }
-        }
+      b {
+        margin-right: 15px;
+      }
     }
-    
+  }
 }

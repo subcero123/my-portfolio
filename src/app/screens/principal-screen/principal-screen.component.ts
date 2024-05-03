@@ -58,19 +58,19 @@ export class PrincipalScreenComponent {
     {
       titulo: 'AWS-Deployed Rental Management Platform',
       resumen: 'Developed a comprehensive platform for a luxury car rental company facilitating:',
-      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
+      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/rental.png',
       opacity: 1
     },
     {
       titulo: 'Animations',
       resumen: 'A collection of animations created using CSS, JavaScript, and GSAP',
-      src: 'src/app/assets/images/animations.png',
+      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/animations.png',
       opacity: 1
     },
     {
       titulo: 'AI Road Tracking System',
       resumen: 'Developed an AI capable of predicting and following roads.',
-      src: '../../assets/images/teleplatform.png',
+      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/teleplatform.png',
       opacity: 1
     },
   ];

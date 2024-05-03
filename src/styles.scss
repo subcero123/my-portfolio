@@ -10,3 +10,22 @@ body{
 ::-webkit-scrollbar {
     display: none; /* Oculta la barra de desplazamiento de WebKit (Safari y Chrome) */
 }
+
+// Mixins desktop, mobile y tablet
+@mixin desktop{
+    @media (min-width: 1024px){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: 631px) and (max-width: 1023px){
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media (max-width: 630px){
+        @content;
+    }
+}

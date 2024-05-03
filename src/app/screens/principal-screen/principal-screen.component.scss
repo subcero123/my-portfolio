@@ -1,61 +1,74 @@
 $color-fondo: #101010;
+// Importar el archivo de estilos general
+@import "../../../styles.scss";
 
-.contenedor-principal{
+.contenedor-principal {
   background-color: $color-fondo;
   height: 100%;
   width: 100%;
 
-  .slide-1{
+  .slide-1 {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .contenedor-titulos{
+    .contenedor-titulos {
       text-align: center;
       pointer-events: none;
 
-
-      .titulo{
+      .titulo {
         color: white;
         font-size: 7rem;
         display: flex;
 
-        .name{
+        @include tablet {
+          font-size: 4rem;
+        }
+
+        @include mobile {
+          font-size: 2rem;
+        }
+
+        .name {
           margin-left: 10px;
           color: #d72323;
         }
       }
 
-      .subtitulo, .skills{
+      .subtitulo,
+      .skills {
         color: white;
         font-size: 2.5rem;
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
+
+        @include tablet {
+          font-size: 2rem;
+        }
+
+        @include mobile {
+          font-size: 1rem;
+        }
       }
 
-
-      .name{
+      .name {
         margin-left: 10px;
         color: #d72323;
         display: flex;
         flex-direction: row;
 
-
-
-        p{
-          margin: 0px; 
+        p {
+          margin: 0px;
         }
-
       }
-
     }
   }
 
-  .slide-2{
+  .slide-2 {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     height: 100%;
@@ -63,62 +76,86 @@ $color-fondo: #101010;
     color: white;
     display: flex;
     justify-content: center;
-    
 
-    .columna-1{
+    // Version tablet y mobile
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .columna-1 {
       height: 100%;
       width: 40%;
       position: sticky;
       top: 5%;
       z-index: 3;
 
+      // Version tablet y mobile
+      @include tablet{
+        position: static;
+        text-align: center;
+        width: 100%;
+      }
 
-      h2{
+      @include mobile{
+        position: static;
+        text-align: center;
+        width: 100%;
+      }
+
+      h2 {
         font-size: 3rem;
         margin: 0px;
       }
-      h3{
+      h3 {
         font-size: 1.5rem;
       }
-      h4{
+      h4 {
         font-size: 1rem;
-        color: #94A3BB;
+        color: #94a3bb;
         margin: 0px;
       }
     }
 
-    .columna-2{
+    .columna-2 {
       width: 40%;
       height: 100%;
-      
-      div{
+
+      @include tablet{
+        width: 100%;
+      }
+
+      @include mobile{
+        width: 100%;
+      }
+
+      div {
         margin-bottom: 40px;
       }
 
-      .resume-link{
+      .resume-link {
         position: relative;
         width: fit-content;
-        
-        &:hover{
+
+        &:hover {
           cursor: pointer;
         }
 
-        a{
+        a {
           text-decoration: none;
           font-weight: bold;
           color: white;
 
-          &:hover{
+          &:hover {
             color: #d72323;
-
           }
-
         }
       }
-
     }
   }
-
 
   #progress {
     position: fixed;
@@ -129,6 +166,4 @@ $color-fondo: #101010;
     z-index: 9999;
     transition: width 0.3s ease; /* Transición suave al cambiar el ancho */
   }
-
-
 }
