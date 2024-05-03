@@ -98,12 +98,14 @@ $color-fondo: #101010;
         position: static;
         text-align: center;
         width: 100%;
+        margin-bottom: 10px;
       }
 
       @include mobile{
         position: static;
         text-align: center;
         width: 100%;
+        margin-bottom: 10px;
       }
 
       h2 {

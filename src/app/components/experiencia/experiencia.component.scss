@@ -66,6 +66,16 @@
       margin: 8px;
       color: #d72323;
 
+      @include tablet {
+        font-size: 0.6rem;
+
+      }
+  
+      // Version tablet y mobile
+      @include mobile {
+        font-size: 0.6rem;
+      }
+
       b {
         margin-right: 15px;
       }
