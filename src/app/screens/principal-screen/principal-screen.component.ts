@@ -56,30 +56,21 @@ export class PrincipalScreenComponent {
 
   proyectos = [
     {
-      titulo: 'Add Astra - Fullstack Engineer',
-      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
+      titulo: 'AWS-Deployed Rental Management Platform',
+      resumen: 'Developed a comprehensive platform for a luxury car rental company facilitating:',
       src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
-      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
       opacity: 1
     },
     {
-      titulo: 'Add Astra - Fullstack Engineer',
-      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
-      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
+      titulo: 'Animations',
+      resumen: 'A collection of animations created using CSS, JavaScript, and GSAP',
+      src: 'src/app/assets/images/animations.png',
       opacity: 1
     },
     {
-      titulo: 'Add Astra - Fullstack Engineer',
-      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff0%2F0d%2Fae%2Ff00dae40fa38727e2ab1eaa4760f2e6c.jpg&f=1&nofb=1&ipt=4636111c7859bdf99e19bddfa9913f9a7dd2d2d70375dacdf1831c911c14c8e6&ipo=images',
-      srcGif: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzRqdW80Z3J1ZXhuYmpsanhla3V1b2h1NzZ5eTl5MWFhM215emsxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzGuyfpaYYj6WbzYCw/giphy.gif',
-      opacity: 1
-    },
-    {
-      titulo: 'Add Astra - Fullstack Engineer',
-      resumen: 'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      src: 'https://raw.githubusercontent.com/subcero123/Ecomerce/main/assets/images/glacial_background.jpg',
+      titulo: 'AI Road Tracking System',
+      resumen: 'Developed an AI capable of predicting and following roads.',
+      src: '../../assets/images/teleplatform.png',
       opacity: 1
     },
   ];
@@ -108,7 +99,7 @@ export class PrincipalScreenComponent {
   hoverElementoProyecto(proyecto: any) {
     this.hoverProyecto(proyecto);
     // Cambiaremos el src de la imagen a la versión gif
-    proyecto.src = proyecto.src.replace('.jpg', '.gif');
+    
   }
 
   // Función para ajustar la opacidad cuando se entra en un elemento
