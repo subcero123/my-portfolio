@@ -57,20 +57,23 @@ export class PrincipalScreenComponent {
   proyectos = [
     {
       titulo: 'AWS-Deployed Rental Management Platform',
-      resumen: 'Developed a comprehensive platform for a luxury car rental company facilitating:',
+      resumen: 'Developed a comprehensive platform for a luxury car rental company',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/rental.png',
+      link: 'https://armoredmex.com/',
       opacity: 1
     },
     {
       titulo: 'Animations',
       resumen: 'A collection of animations created using CSS, JavaScript, and GSAP',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/animations.png',
+      link: 'https://github.com/subcero123/Animations',
       opacity: 1
     },
     {
       titulo: 'AI Road Tracking System',
       resumen: 'Developed an AI capable of predicting and following roads.',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/teleplatform.png',
+      link: 'https://www.canva.com/design/DAFoPqwZaHE/Ktgdi2DCIAFbPGVbL-cDjw/view?utm_content=DAFoPqwZaHE&utm_campaign=designshare&utm_medium=link&utm_source=editor',
       opacity: 1
     },
   ];
