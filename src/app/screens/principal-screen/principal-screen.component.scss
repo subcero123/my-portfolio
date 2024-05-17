@@ -207,9 +207,31 @@ $color-fondo: #101010;
    position: static;  
    margin-top: 50%; 
 
+  //  mobile
+   @include mobile{
+    margin-top: 20%; 
+    margin-bottom: 20%;
+   }
+
+  //  tablet
+   @include tablet{
+    margin-top: 20%; 
+    margin-bottom: 20%;
+   }
+
    .contact-me{
 
     justify-content: start !important;
+
+    // mobile
+    @include mobile{
+      justify-content: center !important;
+    }
+
+    // tablet
+    @include tablet{
+      justify-content: center !important;
+    }
 
 
    }
