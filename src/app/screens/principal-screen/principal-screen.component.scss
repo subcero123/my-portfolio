@@ -25,6 +25,13 @@ $color-fondo: #101010;
       opacity: 0.3;
       z-index: 1;
     }
+
+    .texto-principal{
+      // mobile
+      @include mobile{
+        display: none;
+      }
+    }
     
 
     .contenedor-titulos {
@@ -38,6 +45,9 @@ $color-fondo: #101010;
       width: 100%;
       height: 100%;
       z-index: 2;
+
+      // mobile
+
 
       .titulo {
         color: white;
@@ -88,6 +98,30 @@ $color-fondo: #101010;
           margin: 0px;
         }
       }
+    }
+
+    .texto-mobile{
+      display: none;
+      position: absolute;
+      top: 10%;
+      // mobile
+      @include mobile{
+        display: block;
+        color: white;
+        font-size: 7rem;
+        text-align: center;
+        margin-top: 20px;
+        line-height: 90%;
+      }
+
+
+      .cuadrado-container{
+        border: 3px solid #d72323;
+        padding: 0.8rem 4rem;
+        margin-bottom: 3rem;
+
+      }
+    
     }
 
   }
@@ -168,6 +202,12 @@ $color-fondo: #101010;
       .resume-link {
         position: relative;
         width: fit-content;
+
+        // mobile
+        @include mobile{
+          margin: auto;
+          margin-bottom: 40px;
+        }
 
         &:hover {
           cursor: pointer;
