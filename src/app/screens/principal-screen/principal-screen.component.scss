@@ -13,6 +13,7 @@ $color-fondo: #101010;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .bg-container{
       position: absolute;
@@ -33,6 +34,7 @@ $color-fondo: #101010;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
       width: 100%;
       height: 100%;
       z-index: 2;
@@ -88,44 +90,10 @@ $color-fondo: #101010;
       }
     }
 
-    .container-contact-me{
-
-      margin-top: 1%;
-      display: flex;
-      flex-direction: column;
-
-      .titulo-contact-me{
-        font-size: 4rem;
-        color: white;
-      }
-
-      .contact-me{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2;
-  
-        .link{
-          pointer-events: all;
-        }
-
-        .link{
-          margin: 0px 1rem;
-        }
-  
-        svg{
-          width: 50px;
-          height: 50px;
-          color: white;
-        
-        }
-      }
-
-    }
   }
 
   .slide-2 {
-    font-family: Arial, Helvetica, sans-serif;
+    
     width: 100%;
     height: 100%;
     background-color: $color-fondo;
@@ -165,13 +133,16 @@ $color-fondo: #101010;
       }
 
       h2 {
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 3rem;
         margin: 0px;
       }
       h3 {
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 1.5rem;
       }
       h4 {
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 1rem;
         color: #94a3bb;
         margin: 0px;
@@ -224,4 +195,58 @@ $color-fondo: #101010;
     z-index: 9999;
     transition: width 0.3s ease; /* Transición suave al cambiar el ancho */
   }
+}
+
+
+.container-contact-me{
+  bottom: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  &--inferior{
+   position: static;  
+   margin-top: 50%; 
+
+   .contact-me{
+
+    justify-content: start !important;
+
+
+   }
+  }
+
+  .titulo-contact-me{
+    font-size: 4rem;
+    color: white;
+  }
+
+  .contact-me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    .link{
+      pointer-events: all;
+    }
+
+    .link{
+      margin: 0px 1rem;
+    }
+
+    svg{
+      width: 50px;
+      height: 50px;
+      color: white;
+
+      
+        &:hover{
+          scale: 1.2;
+          transition: all 0.3s ease;
+        } 
+      
+    
+    }
+  }
+
 }
