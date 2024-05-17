@@ -154,6 +154,8 @@ export class PrincipalScreenComponent {
     //Obtener los elementos hijo de name
     const letras = document.querySelectorAll('.name-japanese > *');
     const letrasRomaji = document.querySelectorAll('.name-romaji > *');
+    // Obtener el .contenedor-titulos
+    const contenedorTitulos = document.querySelector('.contenedor-titulos');
 
 
 
