@@ -74,7 +74,7 @@ export class PrincipalScreenComponent {
     {
       titulo: 'AWS-Deployed Rental Management Platform',
       resumen:
-        'Developed a comprehensive platform for a luxury car rental company',
+        'Developed a comprehensive platform for a luxury car rental company, including a user-friendly interface for customers to browse and book vehicles. Integrated AWS services, including S3, Lambda, and API Gateway, to streamline the platform’s functionality. This deployment improved the platform’s scalability and performance, resulting in a 30% increase in user engagement.',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/rental.png',
       link: 'https://armoredmex.com/',
       opacity: 1,
@@ -82,14 +82,14 @@ export class PrincipalScreenComponent {
     {
       titulo: 'Animations',
       resumen:
-        'A collection of animations created using CSS, JavaScript, and GSAP',
+        'A collection of animations created using CSS, JavaScript, and GSAP, including hover effects, loaders, and transitions.',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/animations.png',
       link: 'https://github.com/subcero123/Animations',
       opacity: 1,
     },
     {
       titulo: 'AI Road Tracking System',
-      resumen: 'Developed an AI capable of predicting and following roads.',
+      resumen: 'Developed an AI capable of predicting and following roads. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
       src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/master/src/app/assets/images/teleplatform.png',
       link: 'https://www.canva.com/design/DAFoPqwZaHE/Ktgdi2DCIAFbPGVbL-cDjw/view?utm_content=DAFoPqwZaHE&utm_campaign=designshare&utm_medium=link&utm_source=editor',
       opacity: 1,
