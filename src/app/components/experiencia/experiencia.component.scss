@@ -25,13 +25,13 @@
   &:hover {
     opacity: 1 !important;
     .cargo {
-      color: #d72323;
+      color: $rojo;
     }
   }
 
   .columna-1 {
     width: 30%;
-    color: #787878;
+    color: #a5a5a5;
 
     // Version tablet y mobile
     @include tablet {
@@ -64,7 +64,7 @@
       font-size: 0.9rem;
       display: flex;
       margin: 8px;
-      color: #d72323;
+      color: $rojo;
       width: 100%;
 
       @include tablet {
