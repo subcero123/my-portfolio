@@ -1,4 +1,10 @@
-import { Component, HostListener, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,7 +26,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
     ]),
   ],
 })
-export class PrincipalScreenComponent {
+export class PrincipalScreenComponent implements OnInit, AfterViewInit {
   showSlide1Content: boolean = true;
   experienciaHover: any = null;
   proyectoHover: any = null;
@@ -30,20 +36,16 @@ export class PrincipalScreenComponent {
   timeline = gsap.timeline();
   timelineScroll = gsap.timeline({});
 
+  // obtener todos los iframe
+  iframes = document.getElementsByTagName('iframe');
+
   experiencias = [
     {
       fecha: '2024-Present',
       cargo: 'Add Astra - Fullstack Engineer',
       resumen:
         'Proficient Full Stack Programmer specializing in WordPress and PHP development.Skilled in improving workflows through Bash scripting and Gulp automation. Led creation of AI-powered chatbots, resulting in increased user engagement and successful launch of a newsub-brand.',
-      tecnologias: [
-        'PHP',
-        'Wordpress',
-        'Gulp',
-        'DialogFlow',
-        'AI',
-        'GPT',
-      ],
+      tecnologias: ['PHP', 'Wordpress', 'Gulp', 'DialogFlow', 'AI', 'GPT'],
       opacity: 1,
     },
     {
@@ -59,38 +61,34 @@ export class PrincipalScreenComponent {
       cargo: 'Mirai Innovation - Software Engineer - Osaka, Japan',
       resumen:
         'Implemented a platform using RTSP protocol, Python, and React for real-time visualization and remote control of a vehicle. This integration allowed users to monitor and operate the vehicle seamlessly. Developed an AI capable of predicting and following roads, enhancing the ease of vehicle operation. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
-      tecnologias: [
-        'Python',
-        'Computer Vision',
-        'Django',
-        'Flask',
-        'Arduino',
-      ],
+      tecnologias: ['Python', 'Computer Vision', 'Django', 'Flask', 'Arduino'],
       opacity: 1,
     },
   ];
 
   proyectos = [
     {
+      id: 1,
       titulo: 'AWS-Deployed Rental Management Platform',
+      videoUrl: 'https://youtu.be/ANkxRGvl1VY?si=nHEUM5AdOPyjvhjA',
       resumen:
         'Developed a comprehensive platform for a luxury car rental company, including a user-friendly interface for customers to browse and book vehicles. Integrated AWS services, including S3, Lambda, and API Gateway, to streamline the platform’s functionality. This deployment improved the platform’s scalability and performance, resulting in a 30% increase in user engagement.',
-      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/deploy/src/app/assets/images/rental.webp',
       link: 'https://armoredmex.com/',
       opacity: 1,
     },
     {
+      id: 2,
       titulo: 'Animations',
       resumen:
         'A collection of animations created using CSS, JavaScript, and GSAP, including hover effects, loaders, and transitions.',
-      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/deploy/src/app/assets/images/animations.webp',
       link: 'https://github.com/subcero123/Animations',
       opacity: 1,
     },
     {
+      id: 3,
       titulo: 'AI Road Tracking System',
-      resumen: 'Developed an AI capable of predicting and following roads. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
-      src: 'https://raw.githubusercontent.com/subcero123/my-portfolio/deploy/src/app/assets/images/teleplatform.webp',
+      resumen:
+        'Developed an AI capable of predicting and following roads. This innovation added a predictive element to the platform, allowing for smoother and more intuitive control of the vehicle.',
       link: 'https://www.canva.com/design/DAFoPqwZaHE/Ktgdi2DCIAFbPGVbL-cDjw/view?utm_content=DAFoPqwZaHE&utm_campaign=designshare&utm_medium=link&utm_source=editor',
       opacity: 1,
     },
@@ -104,8 +102,12 @@ export class PrincipalScreenComponent {
   // ngoninit
   ngOnInit() {
     gsap.registerPlugin(ScrollTrigger);
-    this.animacionEntrada();
+  }
+
+  ngAfterViewInit(): void {
     this.animacionScroll();
+    this.animacionEntrada();
+    this.animarIframeScroll();
   }
 
   @HostListener('window:scroll', [])
@@ -119,7 +121,21 @@ export class PrincipalScreenComponent {
 
   hoverElementoProyecto(proyecto: any) {
     this.hoverProyecto(proyecto);
-    // Cambiaremos el src de la imagen a la versión gif
+
+    if (proyecto) {
+      // Buscar el iframe con el id del proyecto
+      const iframe = document.querySelector(`#iframe-video--${proyecto.id}`);
+      // Ocultamos todos los demás iframes
+      for (let i = 0; i < this.iframes.length; i++) {
+        if (this.iframes[i]) {
+          this.iframes[i].style.display = 'none';
+          if (this.iframes[i].id === `iframe-video--${proyecto.id}`) {
+            this.iframes[i].style.display = 'block';
+          }
+        }
+      }
+
+    }
   }
 
   // Función para ajustar la opacidad cuando se entra en un elemento
@@ -129,7 +145,7 @@ export class PrincipalScreenComponent {
   }
 
   // Función para restablecer la opacidad cuando se sale del elemento
-  resetOpacity() {
+  resetOpacity(proyecto?: any) {
     this.experienciaHover = null;
     this.experiencias.forEach((experiencia) => {
       experiencia.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
@@ -137,8 +153,6 @@ export class PrincipalScreenComponent {
     this.proyectoHover = null;
     this.proyectos.forEach((proyecto) => {
       proyecto.opacity = 1; // Establece la opacidad a 1 si el elemento está en hover
-      // Cambiaremos el src de la imagen a la versión jpg
-      proyecto.src = proyecto.src.replace('.gif', '.jpg');
     });
   }
 
@@ -225,9 +239,50 @@ export class PrincipalScreenComponent {
     });
   }
 
+  // animar iframe
+
+  animarIframeScroll() {
+    // Obtener el iframe
+    const iframe = document.querySelector('iframe-video');
+    // Obtener el .contenedor-iframe
+    const contenedorIframe = document.querySelector('.contenedor-video');
+    // Crear timeline
+    const timeline = gsap.timeline();
+    // Añadir animaciones
+
+    gsap.from(contenedorIframe, {
+      rotateY: 30,
+      rotateX: 20,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: '.slide-2--especial', // Elemento que se animará
+        start: 'top bottom', // Cuando el elemento está en la parte superior del viewport
+        end: '50% top', // Cuando el elemento está en la parte inferior del viewport',
+        // guias
+        scrub: true,
+      },
+    });
+  }
+
+  animarIframeHover($event: any) {
+    // Obtener cordeandas del mouse
+    const x = $event.clientX;
+    const y = $event.clientY;
+    // Obtener el contenedor iframe
+    const contenedorIframe = document.querySelector('.contenedor-video');
+
+    // Hacer un transform en el contenedor iframe
+    gsap.to(contenedorIframe, {
+      rotateY: gsap.utils.mapRange(0, window.innerWidth, -15, 15, x * 3),
+      rotateX: gsap.utils.mapRange(0, window.innerHeight, -15, 15, y * 2),
+      duration: 0.5,
+      ease: 'power2.out', // Opcional: suaviza la animación
+    });
+  }
+
   onFocus(event: any) {
     const target = event.target as HTMLElement;
-    
+
     // Obtener .columna-2
     const columna2 = document.querySelector('.columna-2');
     // Cambiar su opacidad a 0.5
@@ -236,11 +291,6 @@ export class PrincipalScreenComponent {
     const aboutMe = document.querySelector('.about-me');
     // Cambiar su opacidad a 0.5
     gsap.to(aboutMe, { opacity: 0.5, duration: 0.1 });
-
-
-
-
-
   }
 
   // Función que se llama cuando el hover sale del elemento
@@ -254,6 +304,5 @@ export class PrincipalScreenComponent {
     const aboutMe = document.querySelector('.about-me');
     // Cambiar su opacidad a 1
     gsap.to(aboutMe, { opacity: 1, duration: 0.2 });
-
   }
 }
