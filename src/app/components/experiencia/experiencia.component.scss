@@ -49,7 +49,7 @@
   }
 
   .columna-2 {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
 
@@ -59,21 +59,34 @@
     .resumen {
       margin-top: 20px;
       color: #94a3bb;
+
+      // Version tablet y mobile
+      @include tablet {
+        text-align: justify;
+      }
+
+      @include mobile {
+        text-align: justify;
+      }
+      
+
     }
     .tecnologias {
       font-size: 0.9rem;
       display: flex;
       margin: 8px;
       color: $rojo;
-      width: 100%;
+      width: 90%;
 
       @include tablet {
         font-size: 0.9rem;
+        width: 100%;
         justify-content: center;
       }
   
       // Version tablet y mobile
       @include mobile {
+        width: 100%;
         font-size: 0.6rem;
         margin: 0px;
         margin-top: 8px;

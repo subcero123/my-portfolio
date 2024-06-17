@@ -10,6 +10,14 @@
   transition: opacity 0.2s ease; /* Define una transición suave para la propiedad de opacidad */
   min-height: 250px;
 
+  @include mobile {
+    min-height: 1px;
+  }
+
+  @include tablet {
+    min-height: 1px;
+  }
+
   .columna-1 {
     width: 0%;
     color: #787878;
@@ -38,6 +46,11 @@
         width: 80%;    
         margin: auto;
     }
+
+    @include tablet{
+      width: 80%;    
+      margin: auto;
+    }
         
 
     &:hover {
@@ -62,6 +75,17 @@
     .resumen {
       margin-top: 20px;
       color: #94a3bb;
+
+      // Mobile
+      @include mobile {
+        text-align: justify;
+      }
+
+      @include tablet {
+        text-align: justify;
+      } 
+
+
     }
   }
 }

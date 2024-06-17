@@ -14,9 +14,15 @@ body{
     display: none; /* Oculta la barra de desplazamiento de WebKit (Safari y Chrome) */
 }
 
+@mixin desktopXL{
+    @media (min-width: 1440px){
+        @content;
+    }
+}
+
 // Mixins desktop, mobile y tablet
 @mixin desktop{
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) and (max-width: 1439px){
         @content;
     }
 }
