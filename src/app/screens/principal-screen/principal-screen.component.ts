@@ -81,7 +81,7 @@ export class PrincipalScreenComponent implements OnInit, AfterViewInit {
       titulo: 'Animations',
       resumen:
         'A collection of animations created using CSS, JavaScript, and GSAP, including hover effects, loaders, and transitions.',
-      link: 'https://github.com/subcero123/Animations',
+      link: 'https://subcero123.github.io/Animations/Tedy/',
       opacity: 1,
     },
     {
